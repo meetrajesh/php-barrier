@@ -1,0 +1,27 @@
+php-barrier
+============
+
+Synopsis
+--------
+A simple PHP based implementation of a barrier system to execute functions once certain specified
+conditions are met
+
+Author
+------
+Rajesh Kumar <rajesh@meetrajesh.com>
+
+Coded on
+--------
+Sunday, 20th November 2011
+
+Usage
+-----
+
+Barrier::once(array('cond1', 'cond2'), function() { echo 'barrier1 is met' . "\n"; });
+Barrier::once(array('cond2', 'cond3'), function() { echo 'barrier2 is met' . "\n"; });
+Barrier::once(array('cond4', 'cond5'), function() { echo 'barrier3 is met' . "\n"; });
+
+Barrier::done('cond1');
+Barrier::done('cond3');
+Barrier::done('cond2');
+
