@@ -3,8 +3,7 @@ php-barrier
 
 Synopsis
 --------
-A simple PHP based implementation of a barrier system to execute functions once certain specified
-conditions are met
+A simple PHP based implementation of a barrier system to execute functions once certain specified conditions are met
 
 Author
 ------
