@@ -29,8 +29,8 @@ class Barrier {
     private static $_rmap = array(); // reverse map of conditions to events
 
     public static function reset() {
-		self::$_barriers = array();
-		self::$_conds = array();
+        self::$_barriers = array();
+        self::$_conds = array();
     }
 
     // mark a condition as done
@@ -38,9 +38,9 @@ class Barrier {
 
         // flip the flag
         if (!isset(self::$_barriers[$cond])) {
-			self::$_barriers[$cond] = true;
+            self::$_barriers[$cond] = true;
             // find all the events subscribed to a barrier containing this condition
-			self::_fire($cond);
+            self::_fire($cond);
         }
 
     }
@@ -53,9 +53,9 @@ class Barrier {
 
         // save the event and its required conditions
         $i = count(self::$_conds); // index of the next new element about to be added
-		self::$_conds[$i] = array($event, $conds);
+        self::$_conds[$i] = array($event, $conds);
         foreach ($conds as $cond) {
-			self::$_rmap[$cond][] = $i;
+            self::$_rmap[$cond][] = $i;
         }
         
         // check if all conds are already met, if yes, fire the event right away
